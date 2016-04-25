@@ -21,7 +21,7 @@ public class FavoritesActivity extends Activity implements FavoritesView {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_favorites);
 
         YoutubeMostPopularApplication.injector.inject(this);
     }
