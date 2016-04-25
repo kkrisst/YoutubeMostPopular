@@ -6,17 +6,17 @@ import n358vu.krisa.youtubemostpopular.YoutubeMostPopularApplication;
 import n358vu.krisa.youtubemostpopular.model.CategoryModel;
 
 /**
- * Created by kkrisst on 24/04/2016.
+ * Created by mobsoft on 2016. 04. 25..
  */
-public class StringInteractor {
+public class CategoryInteractor {
     @Inject
     CategoryModel model;
 
-    public StringInteractor() {
+    public CategoryInteractor() {
         YoutubeMostPopularApplication.injector.inject(this);
     }
 
-    public String getString() {
+    public String getCategory() {
         return model.getNextCategory();
     }
 }

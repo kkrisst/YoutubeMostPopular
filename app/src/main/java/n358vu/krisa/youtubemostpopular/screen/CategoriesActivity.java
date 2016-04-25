@@ -1,18 +1,22 @@
-package n358vu.krisa.youtubemostpopular;
+package n358vu.krisa.youtubemostpopular.screen;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import javax.inject.Inject;
 
-import n358vu.krisa.youtubemostpopular.presenter.MainPresenter;
-import n358vu.krisa.youtubemostpopular.view.MainView;
+import n358vu.krisa.youtubemostpopular.R;
+import n358vu.krisa.youtubemostpopular.YoutubeMostPopularApplication;
+import n358vu.krisa.youtubemostpopular.presenter.CategoriesPresenter;
+import n358vu.krisa.youtubemostpopular.view.CategoriesView;
 
-public class MainActivity extends AppCompatActivity implements MainView {
-
+/**
+ * Created by mobsoft on 2016. 04. 25..
+ */
+public class CategoriesActivity extends Activity implements CategoriesView {
     @Inject
-    MainPresenter mainPresenter;
+    CategoriesPresenter categoriesPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,13 +29,13 @@ public class MainActivity extends AppCompatActivity implements MainView {
     @Override
     protected void onStart() {
         super.onStart();
-        mainPresenter.attachView(this);
+        categoriesPresenter.attachView(this);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mainPresenter.detachView();
+        categoriesPresenter.detachView();
     }
 
     @Override

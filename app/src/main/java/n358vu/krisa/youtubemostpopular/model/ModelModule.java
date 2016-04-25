@@ -9,7 +9,7 @@ import dagger.Provides;
 @Module
 public class ModelModule {
     @Provides
-    public CategoryModel getStringModel() {
+    public CategoryModel getCategoryModel() {
         return new CategoryModel();
     }
 }

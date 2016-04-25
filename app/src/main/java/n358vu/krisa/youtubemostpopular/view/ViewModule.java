@@ -6,7 +6,9 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import n358vu.krisa.youtubemostpopular.presenter.MainPresenter;
+import n358vu.krisa.youtubemostpopular.presenter.CategoriesPresenter;
+import n358vu.krisa.youtubemostpopular.presenter.FavoritesPresenter;
+import n358vu.krisa.youtubemostpopular.presenter.VideoListPresenter;
 
 /**
  * Created by kkrisst on 24/04/2016.
@@ -26,7 +28,19 @@ public class ViewModule {
 
     @Provides
     @Singleton
-    public MainPresenter getMainPresenter() {
-        return new MainPresenter();
+    public VideoListPresenter getVideoListPresenter() {
+        return new VideoListPresenter();
+    }
+
+    @Provides
+    @Singleton
+    public CategoriesPresenter getCategoriesPresenter() {
+        return new CategoriesPresenter();
+    }
+
+    @Provides
+    @Singleton
+    public FavoritesPresenter getFavoritesPresenter() {
+        return new FavoritesPresenter();
     }
 }

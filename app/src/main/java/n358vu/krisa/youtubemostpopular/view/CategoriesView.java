@@ -1,8 +1,8 @@
 package n358vu.krisa.youtubemostpopular.view;
 
 /**
- * Created by kkrisst on 24/04/2016.
+ * Created by mobsoft on 2016. 04. 25..
  */
-public interface MainView {
+public interface CategoriesView {
     void showCategories(String s);
 }
