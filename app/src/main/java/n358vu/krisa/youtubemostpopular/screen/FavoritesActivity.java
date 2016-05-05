@@ -39,7 +39,7 @@ public class FavoritesActivity extends Activity implements FavoritesView {
     }
 
     @Override
-    public void showCategories(String s) {
+    public void showFavorites(String s) {
         Toast.makeText(this, s, Toast.LENGTH_LONG).show();
     }
 }

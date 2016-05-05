@@ -3,7 +3,7 @@ package n358vu.krisa.youtubemostpopular.presenter;
 import javax.inject.Inject;
 
 import n358vu.krisa.youtubemostpopular.YoutubeMostPopularApplication;
-import n358vu.krisa.youtubemostpopular.interactor.CategoryInteractor;
+import n358vu.krisa.youtubemostpopular.interactor.FavoritesInteractor;
 import n358vu.krisa.youtubemostpopular.view.FavoritesView;
 
 /**
@@ -11,13 +11,13 @@ import n358vu.krisa.youtubemostpopular.view.FavoritesView;
  */
 public class FavoritesPresenter extends Presenter<FavoritesView> {
     @Inject
-    public CategoryInteractor interactor;
+    public FavoritesInteractor favoritesInteractor;
 
     public FavoritesPresenter() {
         YoutubeMostPopularApplication.injector.inject(this);
     }
 
     public void doStuff() {
-        view.showCategories(interactor.getCategory());
+        view.showFavorites(favoritesInteractor.getFavorite());
     }
 }

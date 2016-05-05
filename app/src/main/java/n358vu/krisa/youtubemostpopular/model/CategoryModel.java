@@ -4,10 +4,10 @@ package n358vu.krisa.youtubemostpopular.model;
  * Created by kkrisst on 24/04/2016.
  */
 public class CategoryModel {
-    private int idx = 0;
+    //private int idx = 0;
 
     public String getNextCategory() {
-        String[] list = {
+        /*String[] list = {
                 "Music", "Movies", "Games",
                 "Food", "Health",
                 "Events", "Vlog",
@@ -16,7 +16,7 @@ public class CategoryModel {
 
         if (idx == list.length) {
             idx = 0;
-        }
-        return list[idx++];
+        }*/
+        return "Categories";
     }
 }

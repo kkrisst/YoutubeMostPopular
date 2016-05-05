@@ -12,4 +12,14 @@ public class ModelModule {
     public CategoryModel getCategoryModel() {
         return new CategoryModel();
     }
+
+    @Provides
+    public FavoriteModel getFavoriteModel() {
+        return new FavoriteModel();
+    }
+
+    @Provides
+    public VideoListModel getVideoListModel() {
+        return new VideoListModel();
+    }
 }

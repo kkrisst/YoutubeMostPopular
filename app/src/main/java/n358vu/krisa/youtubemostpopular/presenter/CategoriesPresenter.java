@@ -11,13 +11,13 @@ import n358vu.krisa.youtubemostpopular.view.CategoriesView;
  */
 public class CategoriesPresenter extends Presenter<CategoriesView> {
     @Inject
-    public CategoryInteractor interactor;
+    public CategoryInteractor categoryInteractor;
 
     public CategoriesPresenter() {
         YoutubeMostPopularApplication.injector.inject(this);
     }
 
     public void doStuff() {
-        view.showCategories(interactor.getCategory());
+        view.showCategories(categoryInteractor.getCategory());
     }
 }
