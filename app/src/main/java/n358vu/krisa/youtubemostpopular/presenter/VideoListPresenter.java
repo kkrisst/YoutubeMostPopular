@@ -17,7 +17,4 @@ public class VideoListPresenter extends Presenter<VideoListView> {
         YoutubeMostPopularApplication.injector.inject(this);
     }
 
-    public void doStuff() {
-        view.showVideoList(interactor.getVideo());
-    }
 }

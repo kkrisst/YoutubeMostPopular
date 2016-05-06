@@ -1,4 +1,4 @@
-package n358vu.krisa.youtubemostpopular.model;
+package n358vu.krisa.youtubemostpopular.model.prod;
 
 import dagger.Module;
 import dagger.Provides;

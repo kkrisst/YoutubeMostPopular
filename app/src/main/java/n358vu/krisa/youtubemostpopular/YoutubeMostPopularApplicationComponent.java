@@ -7,7 +7,7 @@ import n358vu.krisa.youtubemostpopular.interactor.FavoritesInteractor;
 import n358vu.krisa.youtubemostpopular.interactor.InteractorModule;
 import n358vu.krisa.youtubemostpopular.interactor.CategoryInteractor;
 import n358vu.krisa.youtubemostpopular.interactor.VideoListInteractor;
-import n358vu.krisa.youtubemostpopular.model.ModelModule;
+import n358vu.krisa.youtubemostpopular.model.prod.ModelModule;
 import n358vu.krisa.youtubemostpopular.presenter.CategoriesPresenter;
 import n358vu.krisa.youtubemostpopular.presenter.FavoritesPresenter;
 import n358vu.krisa.youtubemostpopular.presenter.VideoListPresenter;

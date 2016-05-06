@@ -1,4 +1,4 @@
-package n358vu.krisa.youtubemostpopular.model;
+package n358vu.krisa.youtubemostpopular.model.prod;
 
 /**
  * Created by kkrisst on 05/05/2016.

@@ -13,6 +13,11 @@ public class YoutubeMostPopularApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        injector = DaggerYoutubeMostPopularApplicationComponent.builder().viewModule(new ViewModule(this)).build();
+        /*if (BuildConfig.FLAVOR.equals("mock")) {
+            injector = DaggerMockYoutubeMostPopularApplicationComponent.builder().viewModule(new ViewModule(this)).build();
+        }else {*/
+            injector = DaggerYoutubeMostPopularApplicationComponent.builder().viewModule(new ViewModule(this)).build();
+        //}
     }
+
 }
