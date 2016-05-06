@@ -3,8 +3,10 @@ package n358vu.krisa.youtubemostpopular;
 import javax.inject.Singleton;
 
 import dagger.Component;
+import n358vu.krisa.youtubemostpopular.interactor.FavoritesInteractor;
 import n358vu.krisa.youtubemostpopular.interactor.InteractorModule;
 import n358vu.krisa.youtubemostpopular.interactor.CategoryInteractor;
+import n358vu.krisa.youtubemostpopular.interactor.VideoListInteractor;
 import n358vu.krisa.youtubemostpopular.model.ModelModule;
 import n358vu.krisa.youtubemostpopular.presenter.CategoriesPresenter;
 import n358vu.krisa.youtubemostpopular.presenter.FavoritesPresenter;
@@ -22,13 +24,13 @@ import n358vu.krisa.youtubemostpopular.view.ViewModule;
 public interface YoutubeMostPopularApplicationComponent {
     void inject(VideoListActivity videoListActivity);
     void inject(VideoListPresenter videoListPresenter);
-    void inject(CategoryInteractor CategoryInteractor);
+    void inject(VideoListInteractor videoListInteractor);
 
     void inject(CategoriesActivity categoriesActivity);
     void inject(CategoriesPresenter categoriesPresenter);
-    //void inject(CategoryInteractor CategoryInteractor);
+    void inject(CategoryInteractor categoryInteractor);
 
     void inject(FavoritesActivity favoritesActivity);
     void inject(FavoritesPresenter favoritesPresenter);
-    //void inject(CategoryInteractor CategoryInteractor);
+    void inject(FavoritesInteractor favoritesInteractor);
 }

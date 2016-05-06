@@ -2,6 +2,7 @@ package n358vu.krisa.youtubemostpopular.screen;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.Toast;
 
 import javax.inject.Inject;
@@ -40,7 +41,7 @@ public class VideoListActivity extends AppCompatActivity implements VideoListVie
     }
 
     @Override
-    public void showCategories(String s) {
+    public void showVideoList(String s) {
         Toast.makeText(this, s, Toast.LENGTH_LONG).show();
     }
 }

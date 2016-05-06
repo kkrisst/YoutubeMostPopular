@@ -9,9 +9,5 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="n358vu.krisa.youtubemostpopular.screen.CategoriesActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Video List" />
 
 </RelativeLayout>

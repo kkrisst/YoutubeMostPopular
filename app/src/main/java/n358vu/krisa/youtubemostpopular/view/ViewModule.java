@@ -6,6 +6,8 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+//import n358vu.krisa.youtubemostpopular.presenter.CategoriesPresenter;
+//import n358vu.krisa.youtubemostpopular.presenter.FavoritesPresenter;
 import n358vu.krisa.youtubemostpopular.presenter.CategoriesPresenter;
 import n358vu.krisa.youtubemostpopular.presenter.FavoritesPresenter;
 import n358vu.krisa.youtubemostpopular.presenter.VideoListPresenter;

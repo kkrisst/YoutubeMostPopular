@@ -12,4 +12,14 @@ public class InteractorModule {
     public CategoryInteractor getCategoryInteractor() {
         return new CategoryInteractor();
     }
+
+    @Provides
+    public FavoritesInteractor getFavoritesInteractor() {
+        return new FavoritesInteractor();
+    }
+
+    @Provides
+    public VideoListInteractor getVideoListInteractor() {
+        return new VideoListInteractor();
+    }
 }
