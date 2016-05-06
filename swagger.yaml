@@ -1,0 +1,78 @@
+swagger: '2.0'
+info:
+  title: Youtube Most Popular
+  description: Check the most popular Youtube videos by category.
+  version: "1.0.0"
+# the domain of the service
+host: googleapis.com
+# array of all schemes that your API supports
+schemes:
+  - https
+# will be prefixed to all paths
+basePath: /youtube/v3
+produces:
+  - application/json
+paths:
+  /videos:
+    get:
+      summary: Video List
+      description: |
+        The videos endpoint returns information about most popular videos in a specified category.
+      parameters:
+        - name: part
+          in: query
+          description: The part parameter specifies a comma-separated list of one or more video resource properties that the API response will include.
+          required: true
+          type: string
+        - name: chart
+          in: query
+          description: The chart parameter identifies the chart that you want to retrieve.
+          required: true
+          type: string
+        - name: regionCode
+          in: query
+          description: The regionCode parameter instructs the API to select a video chart available in the specified region.
+          required: false
+          type: string
+        - name: videoCategoryId
+          in: query
+          description: The videoCategoryId parameter identifies the video category for which the chart should be retrieved.
+          required: false
+          type: number
+      tags:
+        - Videos
+      responses:
+        200:
+          description: An array of videos
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Video'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+definitions:
+  Video:
+    type: object
+    properties:
+      kind:
+        type: string
+      etag:
+        type: string
+      id:
+        type: string
+        description: The Youtube id of the video.
+      snippet:
+        type: array
+        description: Contains information about a video, including the video title, channel title, descritpion and thumbnails.
+  Error:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      fields:
+        type: string
