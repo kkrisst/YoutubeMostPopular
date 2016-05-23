@@ -4,8 +4,8 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import n358vu.krisa.youtubemostpopular.model.CategoryModel;
 import n358vu.krisa.youtubemostpopular.model.FavoriteModel;
-import n358vu.krisa.youtubemostpopular.model.prod.CategoryModel;
 import n358vu.krisa.youtubemostpopular.model.prod.VideoListModel;
 
 @Module

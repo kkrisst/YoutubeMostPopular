@@ -11,6 +11,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,12 +39,17 @@ public class CategoriesActivity extends Activity implements CategoriesView {
     private RecyclerView recyclerViewCategories;
     private CategoryAdapter categoryAdapter;
 
+    private Tracker mTracker;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categories);
 
         YoutubeMostPopularApplication.injector.inject(this);
+
+        YoutubeMostPopularApplication application = (YoutubeMostPopularApplication) getApplication();
+        mTracker = application.getDefaultTracker();
 
         sideDrawer = (ListView)findViewById(R.id.left_drawer);
         addDrawerItems();
@@ -104,6 +112,8 @@ public class CategoriesActivity extends Activity implements CategoriesView {
     protected void onStart() {
         super.onStart();
         categoriesPresenter.attachView(this);
+        mTracker.setScreenName("Category");
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 
     @Override

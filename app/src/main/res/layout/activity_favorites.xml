@@ -20,7 +20,8 @@ tools:context=".screen.FavoritesActivity">
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="98dp"
-        android:text="Not yet implemented." />
+        android:text="Not yet implemented."
+        android:layout_gravity="center" />
 
 </FrameLayout>
 

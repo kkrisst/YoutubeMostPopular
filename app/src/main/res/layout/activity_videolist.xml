@@ -36,14 +36,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
-        <EditText
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/editText"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="98dp"
-            android:text="Video List!" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Video List"
+            android:id="@+id/textView2"
+            android:layout_gravity="center" />
 
     </FrameLayout>
 

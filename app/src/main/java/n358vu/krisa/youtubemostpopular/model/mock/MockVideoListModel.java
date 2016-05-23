@@ -15,14 +15,6 @@ public class MockVideoListModel extends VideoListModel {
         videolist.add(new Video("title2", "uploader2"));
     }
 
-    /*
-    // Get all videos in a list
-    @Override
-    public List<Video> fetchVideos() {
-        return videolist;
-    }
-    */
-
     @Override
     public void addVideo(Video vid) {
         videolist.add(vid);

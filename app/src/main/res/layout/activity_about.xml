@@ -14,12 +14,14 @@
         android:layout_height="match_parent" >
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="98dp"
-            android:text="Youtube Most Popular Appliaction created by Kristóf Kövér" />
+            android:layout_width="289dp"
+            android:layout_height="119dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Youtube Most Popular Appliaction created by Kristóf Kövér"
+            android:id="@+id/textView"
+            android:layout_gravity="center"
+            android:background="#ffffff"
+            android:textColor="#330d0b" />
 
     </FrameLayout>
 

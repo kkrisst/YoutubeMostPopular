@@ -29,8 +29,8 @@ public interface YoutubeMostPopularApplicationComponent {
     void inject(VideoListInteractor videoListInteractor);
 
     void inject(CategoriesActivity categoriesActivity);
-    void inject(CategoryInteractor categoryInteractor);
     void inject(CategoriesPresenter categoriesPresenter);
+    void inject(CategoryInteractor categoryInteractor);
 
     void inject(FavoritesActivity favoritesActivity);
     void inject(FavoritesPresenter favoritesPresenter);

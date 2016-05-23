@@ -10,6 +10,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+
 import javax.inject.Inject;
 
 import n358vu.krisa.youtubemostpopular.R;
@@ -28,6 +31,8 @@ public class VideoListActivity extends AppCompatActivity implements VideoListVie
     private ListView sideDrawer;
     private ArrayAdapter<String> sideDrawerAdapter;
 
+    private Tracker mTracker;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +42,9 @@ public class VideoListActivity extends AppCompatActivity implements VideoListVie
         addDrawerItems();
 
         YoutubeMostPopularApplication.injector.inject(this);
+
+        YoutubeMostPopularApplication application = (YoutubeMostPopularApplication) getApplication();
+        mTracker = application.getDefaultTracker();
     }
 
     private void addDrawerItems() {
@@ -88,6 +96,8 @@ public class VideoListActivity extends AppCompatActivity implements VideoListVie
     protected void onStart() {
         super.onStart();
         videoListPresenter.attachView(this);
+        mTracker.setScreenName("Favorites");
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 
     @Override
