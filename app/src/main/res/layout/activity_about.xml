@@ -6,12 +6,22 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".screen.CategoriesActivity">
+    tools:context=".screen.AboutActivity">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerViewCategories"
+    <FrameLayout
+        android:id="@+id/content_frame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="98dp"
+            android:text="Youtube Most Popular Appliaction created by Kristóf Kövér" />
+
+    </FrameLayout>
 
     <!-- Side navigation drawer UI -->
     <ListView

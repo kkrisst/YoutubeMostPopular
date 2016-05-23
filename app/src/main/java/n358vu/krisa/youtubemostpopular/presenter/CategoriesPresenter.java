@@ -17,7 +17,11 @@ public class CategoriesPresenter extends Presenter<CategoriesView> {
         YoutubeMostPopularApplication.injector.inject(this);
     }
 
-    public void doStuff() {
-        view.showCategories(categoryInteractor.getCategory());
+    public void showCategories() {
+        try {
+            view.showCategories(categoryInteractor.getCategories());
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
     }
 }

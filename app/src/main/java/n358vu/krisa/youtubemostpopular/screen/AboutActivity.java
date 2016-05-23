@@ -1,29 +1,21 @@
 package n358vu.krisa.youtubemostpopular.screen;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import javax.inject.Inject;
-
 import n358vu.krisa.youtubemostpopular.R;
 import n358vu.krisa.youtubemostpopular.YoutubeMostPopularApplication;
-import n358vu.krisa.youtubemostpopular.presenter.VideoListPresenter;
-import n358vu.krisa.youtubemostpopular.view.VideoListView;
 
 /**
- * Created by mobsoft on 2016. 04. 25..
+ * Created by kkrisst on 23/05/2016.
  */
-public class VideoListActivity extends AppCompatActivity implements VideoListView {
-
-    @Inject
-    VideoListPresenter videoListPresenter;
+public class AboutActivity extends Activity {
 
     private ListView sideDrawer;
     private ArrayAdapter<String> sideDrawerAdapter;
@@ -31,7 +23,7 @@ public class VideoListActivity extends AppCompatActivity implements VideoListVie
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_videolist);
+        setContentView(R.layout.activity_about);
 
         sideDrawer = (ListView)findViewById(R.id.left_drawer);
         addDrawerItems();
@@ -56,25 +48,24 @@ public class VideoListActivity extends AppCompatActivity implements VideoListVie
         switch (position) {
             // Categories
             case 0:  {
-                Toast.makeText(VideoListActivity.this, "Categories - changing.", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(VideoListActivity.this, CategoriesActivity.class);
+                Toast.makeText(AboutActivity.this, "Categories - changing.", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(AboutActivity.this, CategoriesActivity.class);
                 startActivity(intent);
                 break;
             }
 
             // Favorites
             case 1:  {
-                Toast.makeText(VideoListActivity.this, "Favorites - changing.", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(VideoListActivity.this, FavoritesActivity.class);
+                Toast.makeText(AboutActivity.this, "Favorites - changing.", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(AboutActivity.this, FavoritesActivity.class);
                 startActivity(intent);
                 break;
             }
 
             // About
             case 2:  {
-                Toast.makeText(VideoListActivity.this, "About - changing.", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(VideoListActivity.this, AboutActivity.class);
-                startActivity(intent);
+                Toast.makeText(AboutActivity.this, "About - already here.", Toast.LENGTH_SHORT).show();
+                // Already here
                 break;
             }
             default: {
@@ -87,17 +78,11 @@ public class VideoListActivity extends AppCompatActivity implements VideoListVie
     @Override
     protected void onStart() {
         super.onStart();
-        videoListPresenter.attachView(this);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        videoListPresenter.detachView();
     }
 
-    @Override
-    public void showVideoList(String s) {
-        Toast.makeText(this, s, Toast.LENGTH_LONG).show();
-    }
 }

@@ -1,22 +1,50 @@
 package n358vu.krisa.youtubemostpopular.interactor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.inject.Inject;
 
 import n358vu.krisa.youtubemostpopular.YoutubeMostPopularApplication;
-import n358vu.krisa.youtubemostpopular.model.prod.CategoryModel;
+import n358vu.krisa.youtubemostpopular.model.Category;
+import n358vu.krisa.youtubemostpopular.model.CategoryModel;
+
+import n358vu.krisa.youtubemostpopular.model.CategoryResult;
+import n358vu.krisa.youtubemostpopular.network.NetworkConfig;
+import n358vu.krisa.youtubemostpopular.network.YoutubeApi;
+import retrofit2.Call;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.GsonConverterFactory;
 
 /**
  * Created by mobsoft on 2016. 04. 25..
  */
 public class CategoryInteractor {
+
     @Inject
-    CategoryModel model;
+    YoutubeApi youtubeApi;
 
     public CategoryInteractor() {
         YoutubeMostPopularApplication.injector.inject(this);
     }
 
-    public String getCategory() {
-        return model.getNextCategory();
+    public List<Category> getCategories() throws Exception {
+        Response<CategoryResult> response = null;
+
+        Call<CategoryResult> call = youtubeApi.categoryListGet("snippet", "US", NetworkConfig.API_KEY);
+
+        try {
+            response = call.execute();
+        } catch (Exception e) {
+            throw new Exception("Network error on execute with get!");
+        }
+        if (response.code() != 200) {
+            throw new Exception("Network error with get!");
+        }
+
+        return response.body().getItems();
+
     }
+
 }

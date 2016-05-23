@@ -1,15 +1,12 @@
 package n358vu.krisa.youtubemostpopular.model;
 
-import com.orm.SugarRecord;
-
 /**
  * Created by kkrisst on 05/05/2016.
  */
-public class Video extends SugarRecord {
+public class Video {
 
-    private String title;
-    private String uploader;
-    //private Image thumbnail;
+    String title;
+    String uploader;
 
     public Video(){
     }

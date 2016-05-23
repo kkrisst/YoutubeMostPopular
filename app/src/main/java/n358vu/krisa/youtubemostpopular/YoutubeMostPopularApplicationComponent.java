@@ -7,10 +7,11 @@ import n358vu.krisa.youtubemostpopular.interactor.FavoritesInteractor;
 import n358vu.krisa.youtubemostpopular.interactor.InteractorModule;
 import n358vu.krisa.youtubemostpopular.interactor.CategoryInteractor;
 import n358vu.krisa.youtubemostpopular.interactor.VideoListInteractor;
-import n358vu.krisa.youtubemostpopular.model.prod.ModelModule;
+import n358vu.krisa.youtubemostpopular.model.ModelModule;
 import n358vu.krisa.youtubemostpopular.presenter.CategoriesPresenter;
 import n358vu.krisa.youtubemostpopular.presenter.FavoritesPresenter;
 import n358vu.krisa.youtubemostpopular.presenter.VideoListPresenter;
+import n358vu.krisa.youtubemostpopular.screen.AboutActivity;
 import n358vu.krisa.youtubemostpopular.screen.CategoriesActivity;
 import n358vu.krisa.youtubemostpopular.screen.FavoritesActivity;
 import n358vu.krisa.youtubemostpopular.screen.VideoListActivity;
@@ -27,10 +28,12 @@ public interface YoutubeMostPopularApplicationComponent {
     void inject(VideoListInteractor videoListInteractor);
 
     void inject(CategoriesActivity categoriesActivity);
-    void inject(CategoriesPresenter categoriesPresenter);
     void inject(CategoryInteractor categoryInteractor);
+    void inject(CategoriesPresenter categoriesPresenter);
 
     void inject(FavoritesActivity favoritesActivity);
     void inject(FavoritesPresenter favoritesPresenter);
     void inject(FavoritesInteractor favoritesInteractor);
+
+    void inject(AboutActivity aboutActivity);
 }
