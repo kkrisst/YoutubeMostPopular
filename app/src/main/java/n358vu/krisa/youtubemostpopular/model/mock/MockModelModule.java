@@ -1,15 +1,13 @@
 package n358vu.krisa.youtubemostpopular.model.mock;
 
+import javax.inject.Singleton;
+
 import dagger.Module;
 import dagger.Provides;
+import n358vu.krisa.youtubemostpopular.model.FavoriteModel;
 import n358vu.krisa.youtubemostpopular.model.prod.CategoryModel;
-import n358vu.krisa.youtubemostpopular.model.prod.FavoriteModel;
-import n358vu.krisa.youtubemostpopular.model.prod.ModelModule;
 import n358vu.krisa.youtubemostpopular.model.prod.VideoListModel;
 
-/**
- * Created by mobsoft on 2016. 05. 06..
- */
 @Module
 public class MockModelModule {
 
@@ -19,6 +17,7 @@ public class MockModelModule {
     }
 
     @Provides
+    @Singleton
     public FavoriteModel getFavoriteModel() {
         return new FavoriteModel();
     }

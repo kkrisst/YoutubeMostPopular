@@ -9,4 +9,5 @@ import n358vu.krisa.youtubemostpopular.model.Category;
  */
 public interface CategoriesView {
     void showCategories(List<Category> categories);
+    void testMethod(String testMessage);
 }

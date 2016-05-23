@@ -17,9 +17,6 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.GsonConverterFactory;
 
-/**
- * Created by mobsoft on 2016. 04. 25..
- */
 public class CategoryInteractor {
 
     @Inject
@@ -37,6 +34,7 @@ public class CategoryInteractor {
         try {
             response = call.execute();
         } catch (Exception e) {
+            System.out.println(e.toString());
             throw new Exception("Network error on execute with get!");
         }
         if (response.code() != 200) {

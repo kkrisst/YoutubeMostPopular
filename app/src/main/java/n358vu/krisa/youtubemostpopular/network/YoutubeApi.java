@@ -23,7 +23,7 @@ public interface YoutubeApi {
     @GET("videoCategories")
     Call<CategoryResult> categoryListGet(@Query("part") String part,
                                          @Query("regionCode") String regionCode,
-                                         @Query("key") String api_key);
+                                         @Query("key") String key);
 
 
 }

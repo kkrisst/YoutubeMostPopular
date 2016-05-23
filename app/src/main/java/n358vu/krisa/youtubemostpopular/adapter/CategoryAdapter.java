@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import n358vu.krisa.youtubemostpopular.R;
@@ -21,8 +22,12 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
     private Context context;
     private List<Category> categoryList;
 
-    public CategoryAdapter(Context context, List<Category> categoryList) {
+    public CategoryAdapter(Context context) {
         this.context = context;
+        this.categoryList = new ArrayList<Category>();
+    }
+
+    public void setCategoryList (List<Category> categoryList) {
         this.categoryList = categoryList;
     }
 

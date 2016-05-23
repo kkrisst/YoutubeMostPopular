@@ -7,7 +7,8 @@ import n358vu.krisa.youtubemostpopular.interactor.FavoritesInteractor;
 import n358vu.krisa.youtubemostpopular.interactor.InteractorModule;
 import n358vu.krisa.youtubemostpopular.interactor.CategoryInteractor;
 import n358vu.krisa.youtubemostpopular.interactor.VideoListInteractor;
-import n358vu.krisa.youtubemostpopular.model.ModelModule;
+import n358vu.krisa.youtubemostpopular.model.prod.ModelModule;
+import n358vu.krisa.youtubemostpopular.network.NetworkModule;
 import n358vu.krisa.youtubemostpopular.presenter.CategoriesPresenter;
 import n358vu.krisa.youtubemostpopular.presenter.FavoritesPresenter;
 import n358vu.krisa.youtubemostpopular.presenter.VideoListPresenter;
@@ -21,7 +22,7 @@ import n358vu.krisa.youtubemostpopular.view.ViewModule;
  * Created by kkrisst on 24/04/2016.
  */
 @Singleton
-@Component(modules = {ViewModule.class, InteractorModule.class, ModelModule.class})
+@Component(modules = {ViewModule.class, InteractorModule.class, ModelModule.class, NetworkModule.class})
 public interface YoutubeMostPopularApplicationComponent {
     void inject(VideoListActivity videoListActivity);
     void inject(VideoListPresenter videoListPresenter);

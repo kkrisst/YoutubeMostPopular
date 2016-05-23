@@ -6,9 +6,6 @@ import java.util.List;
 import n358vu.krisa.youtubemostpopular.model.Video;
 import n358vu.krisa.youtubemostpopular.model.prod.VideoListModel;
 
-/**
- * Created by mobsoft on 2016. 05. 06..
- */
 public class MockVideoListModel extends VideoListModel {
 
     LinkedList<Video> videolist = new LinkedList<>();

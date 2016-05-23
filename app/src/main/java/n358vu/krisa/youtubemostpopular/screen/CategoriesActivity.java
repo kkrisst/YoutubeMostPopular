@@ -51,6 +51,9 @@ public class CategoriesActivity extends Activity implements CategoriesView {
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerViewCategories.setLayoutManager(llm);
 
+        categoryAdapter = new CategoryAdapter(getApplicationContext());
+        recyclerViewCategories.setAdapter(categoryAdapter);
+
         categoriesPresenter.showCategories();
 
     }
@@ -111,8 +114,13 @@ public class CategoriesActivity extends Activity implements CategoriesView {
 
     @Override
     public void showCategories(List<Category> categories) {
-        categoryAdapter = new CategoryAdapter(getApplicationContext(), categories);
-        recyclerViewCategories.setAdapter(categoryAdapter);
+        categoryAdapter.setCategoryList(categories);
+    }
+
+    @Override
+    public void testMethod(String testMessage) {
+        System.out.println("Activity-bol:");
+        System.out.println(testMessage);
     }
 
 }
